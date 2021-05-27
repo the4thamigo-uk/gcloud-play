@@ -6,6 +6,6 @@ steps:
 
 substitutions:
   _SERVICE: helloworld
-  _VERSION: ${TAG_NAME/${_SERVICE}\//}
+  _VERSION: ${TAG_NAME/helloworld\//}
 options:
   dynamic_substitutions: true
