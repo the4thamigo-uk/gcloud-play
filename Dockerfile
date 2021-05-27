@@ -1,11 +1,13 @@
 FROM golang:latest
 
 RUN pwd
-ADD main.go main.go
+WORKDIR ./helloworld
+ADD helloworld/* ./
+RUN ls -la
 RUN go build -o app
 
 FROM debian:buster-slim
 
-COPY --from=0 /go/app /app
+COPY --from=0 /go/helloworld/app /app
 
 CMD /app
