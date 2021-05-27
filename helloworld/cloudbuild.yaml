@@ -1,8 +1,9 @@
 steps:
- - name: 'gcr.io/cloud-builders/docker'
-   args: ['build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE}:${_VERSION}', '.']
- - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 'gcr.io/$PROJECT_ID/${_SERVICE}:${_VERSION}']
+  - name: 'gcr.io/cloud-builders/docker'
+    dir: 'helloworld'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE}:${_VERSION}', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/${_SERVICE}:${_VERSION}']
 
 substitutions:
   _SERVICE: helloworld
