@@ -2,7 +2,7 @@ FROM golang:latest
 
 RUN pwd
 WORKDIR ./helloworld
-ADD helloworld/* ./
+ADD * ./
 RUN ls -la
 RUN go build -o app
 
