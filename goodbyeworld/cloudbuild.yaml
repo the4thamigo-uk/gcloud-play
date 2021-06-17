@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     id: build
-    dir: 'helloworld'
+    dir: 'goodbyeworld'
     args: 
       - build
       - --no-cache
@@ -30,7 +30,7 @@ steps:
     id: Deploy
 
 substitutions:
-  _SERVICE: hello-world
+  _SERVICE: goodbye-world
   _REGION: europe-west2
   _IMAGE: gcr.io/${PROJECT_ID}/${_SERVICE}:${TAG_NAME:-${SHORT_SHA}}
 options:
