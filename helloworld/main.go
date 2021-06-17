@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-
 	msg := os.Getenv("MESSAGE")
 	if msg == "" {
 		msg = "Hello World!"
